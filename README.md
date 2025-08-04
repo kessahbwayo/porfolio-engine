@@ -22,9 +22,9 @@ This portfolio showcases:
 
 | Project | Description | Link |
 |--------|-------------|------|
-| Portfolio Website | What you're looking at! Built with HTML + CSS only. | [Live Site](https://kessahbwayo.github.io/portfolio-site) |
-| Python Calculator | A beginner-friendly calculator built during a Python crash course. | [GitHub Repo](https://github.com/kessahbwayo/python-calculator) |
-| Chicken Biryani Recipe Page | Static HTML page sharing my favorite biryani recipe. Created as an assignment. | [GitHub Repo](https://github.com/kessahbwayo/biryani-recipe) |
+| Portfolio Website | What you're looking at! Built with HTML + CSS only. | [Live Site]([https://kessahbwayo.github.io/portfolio-site](https://kessahbwayo.github.io/porfolio-engine/)
+| Python Calculator | A beginner-friendly calculator built during a Python crash course. | [GitHub Repo](https://github.com/kessahbwayo/super-parakeet.git)
+| Chicken Biryani Recipe Page | Static HTML page sharing my favorite biryani recipe. Created as an assignment. | [GitHub Repo](https://github.com/kessahbwayo/biryani-recipe](https://github.com/PLP-WebTechnologies/july-2025-introduction-to-html-5-kessahbwayo.git) |
 
 ## 📬 Contact Me
 Feel free to connect:
