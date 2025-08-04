@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorraine Bwayo - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+                     width: 150px;
+                     height: 150px;
+                     border-radius: 50%;
+                     object-fit: cover;
+                    margin: 0 auto 20px;
+                    display: block;
+                     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                     }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .cv-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .interest-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .interest-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .projects-grid,
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <img class="profile-img" src="lorrainebwayo.jpg" alt="Lorraine Bwayo">
+            <h1>Lorraine Bwayo</h1>
+            <p class="subtitle">Aspiring Business analyst & Tech Enthusiast</p>
+            <div class="skills-tags">
+                <span class="skill-tag">Social Media Marketing</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Business Analysis</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">SQL</span>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Hi! I'm a passionate business analyst with a love for converting ideas and requirements into feasible and actionable results. My journey in tech started with curiosity and is evolving into a strong dedication to build innovative solutions that make a positive impact.</p>
+                
+                <p>Proficient in Microsoft Office Suite and SQL, I am passionate
+                    about leveraging data to drive business improvements and enhance organizational success. Committed to continuous
+                    learning, I am eager to make meaningful contributions to any team.</p>
+            </div>
+        </section>
+
+        <!-- Educational Background -->
+        <section class="section">
+            <h2>Educational Background</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Business Computing</h3>
+                <p><strong>Jomo Kenyatta University of Agriculture and Technology</strong> | 2020 - 2024</p>
+                <p>Relevant coursework: Accounting, Economics, Marketing, Data Structures, Algorithms, Web Development, Database Systems, Software Engineering</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>PLP Academy Software Development Program</h3>
+                <p><strong>Power Learn Project</strong> | 2025</p>
+                <p>Intensive bootcamp covering full-stack development, version control, and industry best practices.</p>
+            </div>
+            
+            <a href="lorrainebwayocv.pdf" class="cv-download" download="Lorraine_Bwayo_CV.pdf">📄 Download My CV</a>
+        </section>
+
+        <!-- Interests -->
+        <section class="section">
+            <h2>Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <h3>🌐 Web Development</h3>
+                    <p>Exploring modern frameworks and best practices. I'm passionate about creating responsive, accessible, and user-friendly web applications.</p>
+                </div>
+                <div class="interest-item">
+                    <h3>🚀 Tech Innovations</h3>
+                    <p>Keeping up with emerging trends in technology, from AI and machine learning to blockchain and IoT solutions.</p>
+                </div>
+                <div class="interest-item">
+                    <h3>📱 Mobile Development</h3>
+                    <p>Interested in cross-platform mobile app development and creating seamless user experiences across devices.</p>
+                </div>
+                <div class="interest-item">
+                    <h3> 📊Data Analysis</h3>
+                    <p>Extracting insights from data to support decision-making, uncover trends, and solve real business problems using tools like SQL, Excel, and Power BI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+               <div class="project-card">
+                <h3>🌐 Portfolio Website</h3>
+                  <p>A responsive personal portfolio designed using only HTML and CSS to showcase my background, interests, and early projects. Built during the PLP Hackathon.</p>
+                      <a href="https://yourusername.github.io/portfolio" class="project-link" target="_blank">View Project →</a>
+              </div>
+
+              <div class="project-card">
+                 <h3>🧮 Simple Calculator (Python)</h3>
+                   <p>A basic calculator created using Python to perform simple arithmetic operations. Developed as part of a beginner-level programming course to build problem-solving fundamentals.</p>
+                     <a href="https://github.com/yourusername/python-calculator" class="project-link" target="_blank">View Project →</a>
+              </div>
+
+              <div class="project-card">
+                <h3>🍗 Chicken Biryani Recipe Page</h3>
+                  <p>A fun and fully semantic HTML page featuring a personal biryani recipe. This project helped me practice page structure, text formatting, and accessibility basics.</p>
+                   <a href="https://github.com/yourusername/biryani-recipe" class="project-link" target="_blank">View Project →</a>
+             </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div class="social-links">
+                    <a href="https://github.com/kessahbwayo" class="social-link">GitHub</a>
+                    <a href="mailto:kessahbwayo@gmail.com" class="social-link">Email</a>
+                    <a href="https://twitter.com/txchbaddie" class="social-link">Twitter</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // CV download function
+        function downloadCV() {
+            alert('CV download would be implemented here. Please upload your actual CV file to your project.');
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>                                                                                    
